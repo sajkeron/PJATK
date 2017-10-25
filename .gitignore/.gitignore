@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Problem4 {
+
+
+    public static void main(String[] args) {
+
+
+        Scanner scan = new Scanner(System.in);
+        String test = "";
+        Integer l = 0;
+        Integer h = 500000;
+        Integer c = 1000000;
+        Integer pp = 1;
+
+        System.out.println("Please chose a number in mind form the interval [1,1 000 000] next I ask you 20 Question and show you your number.  ");
+
+        System.out.println(h + " it is your number ? \nChose the answer: \n'y' if is same \n s if your number is smaller \n b if your number is bigger");
+
+        for (Integer i = 1; i <= 20; i++) {
+            System.out.println("Answer number " + i);
+            test = scan.next();
+
+            if (test.equals("s")) {
+                c = h;
+                h = ((h - l) / 2) + l;
+
+                System.out.println(h + " it is your number ? \nchose the answer \n'y' if is same \n s if your number is smaller \n b if your number is bigger");
+                System.out.println("l = " + l + ",h= " + h);
+            } else if (test.equals("b")) {
+                l = h;
+                h = c;
+                h = ((h - l) / 2) + l;
+
+                System.out.println(h + " it is your number ? \nchose the answer \n'y' if is same \n s if your number is smaller \n b if your number is bigger");
+                System.out.println("l = " + l + ",h= " + h);
+            } else if (test.equals("y")) {
+                System.out.println(h + " I get this number form your mind!!! \n\nGame over");
+
+            } else {
+                while (pp == 1) {
+                    System.out.println("Wrong answer please type answer from char below\n\n" + h + " it is your number ? \nchose the answer \n'y' if is same \n s if your number is smaller \n b if your number is bigger");
+                    test = scan.next();
+
+                    if ((!"test".equals("y")) || (!"test".equals("b")) || (!"test".equals("s"))) {
+                        pp = 1;
+                    } else {
+                        pp = 0;
+                        System.out.println(pp);
+                    }
+
+                }
+
+
+            }
+
+        }
+    }
+}
+

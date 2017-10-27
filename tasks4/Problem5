@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Problem5 {
+
+    public static void main(String[] args) {
+
+        Integer a = 1;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter e natural number");
+        Integer[] array = new Integer[100];
+        Integer i = 0;
+        Integer[] b = new Integer[100];
+        Integer c = 0;
+        Integer ii = 0;
+        Integer d = 0;
+        Integer iii =0;
+
+
+
+        while (a != 0)
+        {
+            a = scan.nextInt();
+            array[i] = a;
+            System.out.println("enter a natural number (0 if done): " + a);
+                while (array[i] != 0) {
+                    b[ii] = array[i]%10;
+                    array[i] = array[i] / 10;
+                    c = c + b[ii];
+                    System.out.println(b[ii]);
+                    ii++;
+
+
+                }
+                if (d < c)
+                {
+                    d = c;
+                    iii = a;
+
+                }
+
+                c= 0;
+
+                i++;
+
+        }
+        System.out.println("Max sum of digits was " + d + " for " + iii);
+
+
+    }
+}
